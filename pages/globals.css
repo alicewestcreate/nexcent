@@ -85,7 +85,8 @@ body {
   overflow-x: hidden;
 }
 
-body {
+/* body {
+  font-family: 'Inter', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -93,6 +94,14 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+body {
+  background-color: white;
+}
+
+ul {
+  list-style-type: none,!important
 }
 
 a {
