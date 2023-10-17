@@ -44,10 +44,20 @@ export const customTheme = {
       body3: 14,
       body4: 12,
     },
+    lineHeight: {
+      h1: 76,
+      h2: 44,
+      h3: 36,
+      h4: 28,
+      body1: 28,
+      body2: 24,
+      body3: 16,
+      body4: 16,
+    },
     weight: {
       regular: '300', // Design does not reflex true weight styling
-      medium: '400',
-      semiBold: '500',
+      medium: '500',
+      semiBold: '600',
 
     }
   },
@@ -109,6 +119,7 @@ export const customTheme = {
 };
 
 export type CustomTheme = typeof customTheme;
+
 export type ThemeFont = typeof customTheme.font;
 export type ThemeFontSizes = typeof customTheme.font.size;
 export type ThemeColors = typeof customTheme.colors;
