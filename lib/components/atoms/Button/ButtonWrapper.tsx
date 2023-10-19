@@ -1,10 +1,11 @@
 import React from "react";
-import Button from "../../atoms/Button/Button";
-import type { ButtonProps } from "../../atoms/Button/Button";
+import Button from "./Button";
+import type { ButtonProps } from "./Button";
+import { css } from "@emotion/css";
 
 interface Props extends ButtonProps {
   label: string;
-//   onClick: () => void;
+  //   onClick: () => void;
 }
 
 const ButtonWrapper: React.FC<Props> = ({ onClick, label, ...rest }) => {
@@ -18,10 +19,12 @@ const ButtonWrapper: React.FC<Props> = ({ onClick, label, ...rest }) => {
     console.log(action);
   };
 
+
+
   return (
-    <Button onClick={handleAction} {...rest}>
-      {label}
-    </Button>
+      <Button onClick={handleAction} {...rest}>
+        {label}
+      </Button>
   );
 };
 

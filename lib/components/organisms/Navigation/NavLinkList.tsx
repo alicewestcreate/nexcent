@@ -1,9 +1,8 @@
 import React from "react";
-import NavLink from "../../atoms/NavLink/NavLink";
+import NavLink from "./NavLink";
 import { css } from "@emotion/css";
 import { useTheme } from "@emotion/react";
 import type { CustomTheme } from "@/app/theme";
-import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -44,10 +43,7 @@ const NavLinkList = () => {
 
 
 const ulStyle = css({
-    listStyleType: 'none',
-    display: 'flex',
-    flexDirection: 'row',
-    gap: theme.spacing.baseSpacing.xl
+
 })
 
 

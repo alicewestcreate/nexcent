@@ -2,25 +2,27 @@ import { css } from "@emotion/css";
 import { useTheme } from "@emotion/react";
 import type { CustomTheme } from "@/app/theme";
 import React from "react";
-import generateSpacingString from '../../../utils/utilityFunc/generateSpacingString'
+import generateSpacingString from "../../../utils/utilityFunc/generateSpacingString";
+import { getDynamicIcon } from "@/lib/utils/utilityFunc/getDynamicIcon";
+import { IconType } from "../Icons/IconProps";
 
-
+type IconPosition = "left" | "right";
 
 export interface ButtonProps {
   variant?: "primary" | "secondary" | "tertiary";
   children?: string;
   size?: "normal" | "medium" | "small";
-  icon?: React.ReactNode | undefined;
-  iconPosition?: "left" | "right" | undefined;
-  onClick? : () => void
+  icon?: IconType;
+  iconPosition?: IconPosition;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   children,
   size = "normal",
-  icon = undefined,
-  iconPosition = undefined,
+  icon,
+  iconPosition = "left",
   onClick,
 }) => {
   const theme = useTheme() as CustomTheme;
@@ -28,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   let buttonStd = css({
     fontSize: theme.font.size.body1,
     borderRadius: theme.spacing.baseSpacing.xs,
+    cursor: "pointer",
   });
 
   let buttonSize = css({
@@ -52,20 +55,31 @@ const Button: React.FC<ButtonProps> = ({
     color:
       variant !== "primary"
         ? theme.colors.primary
-        : theme.colors.neutrals.white,
+        : theme.colors.neutrals.silver,
     backgroundColor:
-      variant !== "primary"
+      variant === "primary"
+        ? theme.colors.primary
+        : variant === "secondary"
         ? theme.colors.neutrals.white
+        : variant === "tertiary"
+        ? "inherit"
         : theme.colors.primary,
     border:
       variant === "secondary" ? `1px solid ${theme.colors.primary}` : "none",
   });
 
+  const iconColor = icon && variant != "primary" ? theme.colors.primary : theme.colors.neutrals.silver
+
+  const DynamicIcon = icon ? getDynamicIcon(icon, iconColor) : null;
+
   return (
-    <button className={`${buttonStd} ${buttonVariant} ${buttonSize}`} onClick={onClick}>
-      {icon && iconPosition === "left" && <i>{icon}</i>}
+    <button
+      className={`${buttonStd} ${buttonVariant} ${buttonSize}`}
+      onClick={onClick}
+    >
+      {iconPosition === "left" && DynamicIcon && <DynamicIcon /> }
       {children}
-      {icon && iconPosition === "right" && <i>{icon}</i>}
+      {iconPosition === "right" && DynamicIcon && <DynamicIcon />}
     </button>
   );
 };

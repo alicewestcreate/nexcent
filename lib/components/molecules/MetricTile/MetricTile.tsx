@@ -21,6 +21,7 @@ const MetricTile: React.FC<MetricTileProps> = ({ metricTile }) => {
   const gridStyle = css({
     display: "flex",
     alignItems: "center",
+    justifyContent: "start",
     gap: "16px",
     "& *": {
       margin: 0,

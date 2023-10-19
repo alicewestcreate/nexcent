@@ -3,22 +3,29 @@ import React from "react";
 import { css } from "@emotion/css";
 import { ThemeProvider, useTheme } from "@emotion/react";
 import type { CustomTheme } from "@/app/theme";
-import NavBar from "@/lib/components/organisms/NavBar/NavBar";
 import FeatureSection from "@/lib/components/organisms/FeatureSection/FeatureSection";
-import HeadingCard from "@/lib/components/molecules/HeadingCard/HeadingCard";
+import HeadingCard from "@/lib/components/organisms/HeadingCard/HeadingCard";
 import LogoArray from "@/lib/components/molecules/LogoArray/LogoArray";
 import { MediaQuery as mq } from "@/lib/utils/Constants";
-import FlexBox from "@/lib/components/organisms/FeatureCardWrap/FeatureCardWrap";
+import CardWrap from "@/lib/components/organisms/FeatureCard/CardWrap";
 import Typography from "@/lib/components/atoms/Typography/Typography";
-import TwoColumn from "@/lib/components/molecules/TwoColumn/TwoColumn";
-import MetricTileWrapper from "@/lib/components/molecules/MetricTile/MetricTileWrapper";
 import Button from "@/lib/components/atoms/Button/Button";
-import RightArrow from "@/lib/components/atoms/Icons/RightArrow";
+import Navigation from "@/lib/components/organisms/Navigation/Navigation";
+import AchievementsSection from "@/lib/components/organisms/AchievementsSection/AchievementsSection";
+import CustomerReviewSection from "@/lib/components/organisms/CustomerReviewSection/CustomerReviewSection";
+import ImageFeatureCard from "@/lib/components/organisms/FeatureCard/ImageFeatureCard";
+import ImageFeatureCardWrap from "@/lib/components/organisms/FeatureCard/ImageFeatureCardWrap";
+import ButtonWrapper from "@/lib/components/atoms/Button/ButtonWrapper";
+import Demo from "@/lib/components/organisms/Demo/Demo";
+import Footer from "@/lib/components/organisms/Footer/Footer";
 export default function Home() {
   const theme = useTheme() as CustomTheme;
 
   const silverBackgound = css({
     backgroundColor: theme.colors.neutrals.silver,
+  });
+  const blackBackground = css({
+    backgroundColor: theme.colors.neutrals.black,
   });
 
   const content = {
@@ -106,24 +113,45 @@ export default function Home() {
     },
   ];
 
+  const imageFeatureCardContent = [
+    {
+      image: "laptop0.png",
+      copy: "Creating Streamlined Safeguarding Processes with OneRen",
+      link: "Readmore ",
+    },
+    {
+      image: "laptop1.png",
+      copy: "What are your safeguarding responsibilities and how can you manage them?",
+      link: "Readmore ",
+    },
+    {
+      image: "laptop2.png",
+      copy: "Revamping the Membership Model with Triathlon Australia",
+      link: "Readmore ",
+    },
+  ]
+
   const gridContainer = css({
     display: "grid",
-    gridTemplateColumns: "1fr minmax(40vw, 576px) 1fr",
+    marginTop: '70px',
+    gridTemplateColumns: "25px minmax(10vw, 1fr) 25px",
 
     [mq.tablet]: {
-      gridTemplateColumns: "1fr minmax(40vw, 768px) 1fr",
+      gridTemplateColumns: "1fr minmax(10vw, 768px) 1fr",
     },
     [mq.desktop]: {
-      gridTemplateColumns: "1fr minmax(40vw, 992px) 1fr",
+      gridTemplateColumns: "1fr minmax(10vw, 900px) 1fr",
+      marginTop: '110px',
     },
     [mq.large]: {
-      gridTemplateColumns: "1fr minmax(40vw, 1200px) 1fr",
+      gridTemplateColumns: "1fr minmax(10vw, 1200px) 1fr",
     },
   });
 
   const gridStyle = css({
+    paddingTop: "20px",
+    paddingBottom: "20px",
     "& > :first-child": {
-      // border: 'black solid 1px',
       paddingTop: "40px",
       paddingBottom: "40px",
     },
@@ -147,11 +175,8 @@ export default function Home() {
 
   return (
     <ThemeProvider theme={theme}>
+      <Navigation></Navigation>
       <div className={gridContainer}>
-        <GridRow background={silverBackgound}>
-          <NavBar />
-        </GridRow>
-
         <GridRow background={silverBackgound}>
           <FeatureSection
             isHero
@@ -170,7 +195,7 @@ export default function Home() {
         </GridRow>
 
         <GridRow>
-          <FlexBox contents={featureCardsContent}></FlexBox>
+          <CardWrap contents={featureCardsContent}></CardWrap>
         </GridRow>
 
         <GridRow>
@@ -178,27 +203,7 @@ export default function Home() {
         </GridRow>
 
         <GridRow background={silverBackgound}>
-          <TwoColumn
-            firstChild={
-              <>
-                <HeadingCard
-                  content={{
-                    heading: "Helping a local business reinvent itself",
-                    copy: "We reached here with our hard work and dedication",
-                  }}
-                  alignment="left"
-                  duoTone={{ direction: "start", value: 3, nextLine: true }}
-                ></HeadingCard>
-              </>
-            }
-            secondChild={
-              <>
-                <MetricTileWrapper
-                  metricTileList={metricTileContent}
-                ></MetricTileWrapper>
-              </>
-            }
-          ></TwoColumn>
+          <AchievementsSection content={metricTileContent}></AchievementsSection>
         </GridRow>
 
         <GridRow>
@@ -206,33 +211,20 @@ export default function Home() {
         </GridRow>
 
         <GridRow background={silverBackgound}>
-          <TwoColumn
-            firstChild={
-              <>
-              </>
-            }
-            secondChild={
-              <>
-              <Typography text={"Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna."}></Typography>
-              
-              <Typography type={'h4'} variant={"h4"} color={"primary"} text={"Tim Smith"}></Typography>
-              <Typography text={"British Dragon Boat Racing Association"}></Typography>
-              <LogoArray maxItemsToShow={6}></LogoArray>
-              <Button variant={"tertiary"}>Meet all customers </Button> <RightArrow color={theme.colors.primary}></RightArrow>
-              </>
-            }
-          ></TwoColumn>
+          <CustomerReviewSection></CustomerReviewSection>
         </GridRow>
 
         <GridRow>
           <HeadingCard content={headingCardsContent[2]}></HeadingCard>
         </GridRow>
         <GridRow>
-          <FlexBox contents={featureCardsContent}></FlexBox>
+          <ImageFeatureCardWrap content={imageFeatureCardContent}></ImageFeatureCardWrap>
         </GridRow>
-        <GridRow>
-          <Typography type={'h2'} variant={'h1'} align={"center"} text={'Pellentesque suscipit fringilla libero eu.'}></Typography>
-          <Button variant="primary">Get a Demo</Button>
+        <GridRow  background={silverBackgound}>
+          <Demo></Demo>
+        </GridRow>
+        <GridRow background={blackBackground}>
+          <Footer></Footer>
         </GridRow>
       </div>
     </ThemeProvider>

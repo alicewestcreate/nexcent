@@ -4,8 +4,8 @@ import type { IconProps } from "./IconProps";
 const FingerIcon = ({ color }: IconProps) => {
   return (
     <svg
-      width="34"
-      height="38"
+      width="44"
+      height="48"
       viewBox="0 0 34 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

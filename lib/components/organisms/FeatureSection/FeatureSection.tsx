@@ -1,21 +1,21 @@
 import React from "react";
 import Image from "@/lib/components/atoms/Image/Image";
-import ButtonWrapper from "@/lib/components/molecules/ButtonWrapper/ButtonWrapper";
+import ButtonWrapper from "@/lib/components/atoms/Button/ButtonWrapper";
 import { css } from "@emotion/css";
 import Typography, { duoToneType } from "../../atoms/Typography/Typography";
-
+import { MediaQuery as mq } from "@/lib/utils/Constants";
 
 interface FeatureSection {
-    isHero? : boolean,
-    isImageFirst?: boolean,
-    duoTone?: duoToneType,
-    content?: {
-        heading: string,
-        body: string,
-        image: string,
-        cta: {
-        label: string,
-        slug: string,
+  isHero?: boolean;
+  isImageFirst?: boolean;
+  duoTone?: duoToneType;
+  content?: {
+    heading: string;
+    body: string;
+    image: string;
+    cta: {
+      label: string;
+      slug: string;
     };
   };
 }
@@ -39,24 +39,38 @@ const FeatureSection: React.FC<FeatureSection> = ({
   };
   const finalContent = content || defaultContent;
 
-
   const sectionStyle = css({
     display: "grid",
-    // Ismobile? gridTemlateToRow??????? 
-    gridTemplateColumns: isImageFirst ? "3fr 4fr" : "2fr 1fr" ,
+    gridTemplateRows: "1fr",
+    gridTemplateColumns: "1fr",
+    gridTemplateAreas: "'image' 'content'",
     alignItems: "center",
-    gridTemplateAreas: isImageFirst ?  "'image content'" : "'content image'",
+    justifyItems: "center",
+    gap: "42px",
+
+    [mq.desktop]: {
+      gridTemplateColumns: isImageFirst ? "3fr 4fr" : "2fr 1fr",
+      alignItems: "center",
+      gridTemplateAreas: isImageFirst ? "'image content'" : "'content image'",
+    },
   });
 
   const imageStyle = css({
     gridArea: "image",
-    justifySelf: 'center',
-    alignSelf: 'center',
+    justifySelf: "center",
+    alignSelf: "center",
+    "& img": {
+      width: "300px",
+    },
+    [mq.mobile]: {
+      "& img": {
+        width: "400px",
+      },
+    },
   });
   const contentStyle = css({
     gridArea: "content",
-    maxWidth: (isHero) ? '700px' : '575px'
-  
+    maxWidth: isHero ? "700px" : "575px",
   });
 
   const headingStyle = css({
@@ -67,24 +81,32 @@ const FeatureSection: React.FC<FeatureSection> = ({
     marginBottom: "32px",
   });
 
-
   return (
     <section className={sectionStyle}>
       <div className={contentStyle}>
         <div className={headingStyle}>
-        <Typography type={isHero ? 'h1' : 'h2'}  variant={isHero ? 'h1' : 'h2'} color="darkgrey" text={finalContent.heading} duoTone={duoTone}></Typography>
+          <Typography
+            type={isHero ? "h1" : "h2"}
+            variant={isHero ? "h1" : "h2"}
+            color="darkgrey"
+            text={finalContent.heading}
+            duoTone={duoTone}
+          ></Typography>
         </div>
         <div className={paragraphStyle}>
-        <Typography type="p" variant={isHero ? 'body1' : 'body3'} color="grey" text={finalContent.body}>
-            
-          </Typography>
+          <Typography
+            type="p"
+            variant={isHero ? "body1" : "body3"}
+            color="grey"
+            text={finalContent.body}
+          ></Typography>
         </div>
         <div>
           <ButtonWrapper label={finalContent.cta.label} />
         </div>
       </div>
       <div className={imageStyle}>
-        <Image src={finalContent.image}></Image>
+        <Image src={finalContent.image} ></Image>
       </div>
     </section>
   );

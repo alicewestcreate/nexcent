@@ -1,7 +1,7 @@
 import React from "react";
 import type { IconProps } from "./IconProps";
 
-const RightArrow = ({ color = "inherit" }: IconProps) => {
+const RightArrow = ({ color = "black" }: IconProps) => {
   return (
     <svg
       width="17"
@@ -13,8 +13,8 @@ const RightArrow = ({ color = "inherit" }: IconProps) => {
       <path
         d="M12 9.39905L15.2929 6.10615C15.6834 5.71563 15.6834 5.08246 15.2929 4.69194L12 1.39905M15 5.39905L1 5.39905"
         stroke={color}
-        stroke-width="1.5"
-        stroke-linecap="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
     </svg>
   );

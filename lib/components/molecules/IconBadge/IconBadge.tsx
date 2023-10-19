@@ -12,6 +12,7 @@ interface IconsBadgeProps {
 const IconBadge: React.FC<IconsBadgeProps> = ({ icon }) => {
   const badgeWrapperStyle = css({
     position: "relative",
+    zIndex: "-10",
     "& > :last-child": {
       position: "absolute",
       left: "-15px",

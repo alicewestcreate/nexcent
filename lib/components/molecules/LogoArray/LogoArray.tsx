@@ -19,9 +19,10 @@ const LogoArray = ({maxItemsToShow}:LogoArrayProps ) => {
 
   const logoArrayStyle = css({
     display: 'flex',
+    flexWrap: 'wrap',
+    gap: "10px",
     justifyContent: "space-around",
-    paddingTop: "40px",
-    filter: 'grayscale(100)',
+
 
   })
 

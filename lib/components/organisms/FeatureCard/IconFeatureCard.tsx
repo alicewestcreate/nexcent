@@ -4,6 +4,7 @@ import { css } from "@emotion/css";
 import IconBadge from "../../molecules/IconBadge/IconBadge";
 import { IconType } from "../../atoms/Icons/IconProps";
 import generateSpacingString from "@/lib/utils/utilityFunc/generateSpacingString";
+import { MediaQuery as mq } from "@/lib/utils/Constants";
 
 interface FeatureCardProps {
   icon: IconType;
@@ -11,7 +12,7 @@ interface FeatureCardProps {
   copy: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, heading, copy }) => {
+const IconFeatureCard: React.FC<FeatureCardProps> = ({ icon, heading, copy }) => {
   const cardStyle = css({
     display: "flex",
     flexDirection: "column",
@@ -19,7 +20,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, heading, copy }) => {
     alignItems: "center",
     padding: generateSpacingString(24, 32),
     gap: "16px",
-    width: "300px",
+    maxWidth: "600px",
+    [mq.desktop]: {
+      width: "300px",
+    },
     height: "260px",
     borderRadius: "8px",
     boxShadow: "2px 2px 6px rgba(0, 0, 0, 0.05)",
@@ -51,4 +55,4 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, heading, copy }) => {
   );
 };
 
-export default FeatureCard;
+export default IconFeatureCard;

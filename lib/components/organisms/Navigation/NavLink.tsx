@@ -10,8 +10,9 @@ interface Props {
 const NavLink: React.FC<Props> = ({ slug, children }) => {
 
     const style = css({
-        textDecoration: 'none',
-        color: 'inherit',
+        // textDecoration: 'none',
+        // color: 'inherit',
+        // cursor: "pointer",
     })
 
 

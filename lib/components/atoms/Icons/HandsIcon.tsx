@@ -5,8 +5,8 @@ const HandsIcon = ({color = 'black'}: IconProps) => {
   return (
     <svg
       width="48"
-      height="48"
-      viewBox="0 0 48 48"
+      height="52"
+      viewBox="5 3 35 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

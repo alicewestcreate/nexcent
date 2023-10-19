@@ -1,13 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { css } from "@emotion/css";
-import NavBar from "@/lib/components/organisms/NavBar/NavBar";
+import NavBar from "@/lib/components/organisms/Navigation/DesktopMenu";
 import FeatureSection from "@/lib/components/organisms/FeatureSection/FeatureSection";
-import HeadingCard from "@/lib/components/molecules/HeadingCard/HeadingCard";
+import HeadingCard from "@/lib/components/organisms/HeadingCard/HeadingCard";
 import LogoArray from "@/lib/components/molecules/LogoArray/LogoArray";
 import { customTheme as theme } from "../app/theme";
 import { MediaQuery as mq } from "@/lib/utils/Constants";
-import FeatureCard from "@/lib/components/organisms/FeatureCard/FeatureCard";
+import IconFeatureCard from "@/lib/components/organisms/IconFeatureCard/IconFeatureCard";
 
 
 export default function Home() {
@@ -103,7 +103,7 @@ export default function Home() {
         <div></div>
         <div className={gridStyle}>
           <HeadingCard content={headingCardsContent[1]}></HeadingCard>
-          <FeatureCard></FeatureCard>
+          <IconFeatureCard></IconFeatureCard>
  
           
         </div>
