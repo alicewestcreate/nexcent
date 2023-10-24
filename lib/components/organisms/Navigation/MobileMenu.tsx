@@ -61,7 +61,7 @@ const MobileMenu = () => {
   return (
     <div>
       <div className={logoWrapper}>
-        <BusinessLogo color="white" />
+        <BusinessLogo inverted/>
       </div>
       <button
         className={`${buttonWrapper}`}

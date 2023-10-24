@@ -19,6 +19,7 @@ export default function RootLayout({
     <Providers>
     <html lang="en" className={`${inter.className}`}>
       <body >{children}</body>
+      <script src="https://kit.fontawesome.com/333a269518.js"></script>
     </html>
     </Providers>
   )

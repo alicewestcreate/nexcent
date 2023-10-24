@@ -13,11 +13,14 @@ const SocialMediaList = () => {
   });
 
   return (
+    <>
     <div className={styling}>
       {socialMedia.map((media, index) => (
         <SocialMediaButton key={index}></SocialMediaButton>
       ))}
     </div>
+  
+    </>
   );
 };
 

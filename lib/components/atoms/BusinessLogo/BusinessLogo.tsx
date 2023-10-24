@@ -3,13 +3,14 @@ import React from "react";
 import { useTheme } from "@emotion/react";
 import type { CustomTheme } from "@/app/theme";
 import LogoName from "./LogoName";
+import LogoIcon from "./LogoIcon";
 
 interface BusinessLogoProps {
-  color?: string
+  inverted? : boolean
 } 
 
 
-const BusinessLogo = ({color}: BusinessLogoProps) => {
+const BusinessLogo = ({inverted = false}: BusinessLogoProps) => {
   const theme = useTheme() as CustomTheme;
   const logoStyle = css({
     display: "flex",
@@ -18,8 +19,8 @@ const BusinessLogo = ({color}: BusinessLogoProps) => {
 
   return (
     <div className={logoStyle}>
-      <img src="./Icon.svg"></img>
-      <LogoName color={color}></LogoName>
+      <LogoIcon inverted={inverted}></LogoIcon>
+      <LogoName inverted={inverted}></LogoName>
     </div>
   );
 };

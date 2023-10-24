@@ -7,7 +7,7 @@ import SocialMediaList from './SocialMediaList'
 const CompanyInfo = () => {
   return (
     <div>
-        <BusinessLogo color='white'></BusinessLogo>
+        <BusinessLogo inverted ></BusinessLogo>
         <Typography type="p" variant="body4" color="white" text="Copyright © 2020 Nexcent ltd."></Typography>
         <Typography type="p" variant="body4" color="white" text="All rights reserved"></Typography>
         <SocialMediaList></SocialMediaList>

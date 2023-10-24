@@ -36,7 +36,7 @@ const DesktopMenu = () => {
     <>
       <div className={navStyle}>
         <div>
-          <BusinessLogo color={theme.colors.secondary} />
+          <BusinessLogo />
         </div>
         <div className={linkListStyle}>
           <NavLinkList></NavLinkList>

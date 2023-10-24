@@ -11,7 +11,7 @@ export type type = "h1" | "h2" | "h3" | "h4" | "p";
 export type alignmentType = "left" | "center" | "right" | "justify";
 export type duoToneDirection = "start" | "end";
 export type duoToneType = {
-  direction?: duoToneDirection;
+  direction?: duoToneDirection
   value?: number;
   nextLine?: boolean;
 };

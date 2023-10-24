@@ -1,7 +1,15 @@
 import React from "react";
-import type { IconProps } from "../Icons/IconProps";
 
-const LogoName = ({color = "black"}: IconProps ) => {
+interface props {
+  inverted?: boolean
+}
+
+const LogoName = ({inverted = false}: props ) => {
+
+  const color = inverted ? '#ffffff' : 'black'
+
+
+
   return (
     <svg
       width="112"

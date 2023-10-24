@@ -8,14 +8,10 @@ import HeadingCard from "@/lib/components/organisms/HeadingCard/HeadingCard";
 import LogoArray from "@/lib/components/molecules/LogoArray/LogoArray";
 import { MediaQuery as mq } from "@/lib/utils/Constants";
 import CardWrap from "@/lib/components/organisms/FeatureCard/CardWrap";
-import Typography from "@/lib/components/atoms/Typography/Typography";
-import Button from "@/lib/components/atoms/Button/Button";
 import Navigation from "@/lib/components/organisms/Navigation/Navigation";
 import AchievementsSection from "@/lib/components/organisms/AchievementsSection/AchievementsSection";
 import CustomerReviewSection from "@/lib/components/organisms/CustomerReviewSection/CustomerReviewSection";
-import ImageFeatureCard from "@/lib/components/organisms/FeatureCard/ImageFeatureCard";
 import ImageFeatureCardWrap from "@/lib/components/organisms/FeatureCard/ImageFeatureCardWrap";
-import ButtonWrapper from "@/lib/components/atoms/Button/ButtonWrapper";
 import Demo from "@/lib/components/organisms/Demo/Demo";
 import Footer from "@/lib/components/organisms/Footer/Footer";
 export default function Home() {
