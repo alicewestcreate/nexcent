@@ -20,10 +20,8 @@ const FooterColumn = ({ heading, links }: footerProps) => {
     fontWeight: theme.font.weight.regular,
     listStyleType: "none",
     textDecoration: "none",
-    // paddingTop: '12px',
-    '& > *' :{
-        paddingBottom: '12px',
-    }
+    lineHeight: "1.7rem",
+
   });
 
   const column = links.map((page, index) => (
@@ -35,7 +33,7 @@ const FooterColumn = ({ heading, links }: footerProps) => {
   return (
     <div>
       <Typography type="h4" variant="h4" color={"silver"} text={heading}></Typography>
-      <ul className={linkStyling}>{column}</ul>;
+      <ul className={linkStyling}>{column}</ul>
     </div>
   );
 };

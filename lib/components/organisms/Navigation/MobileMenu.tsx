@@ -26,19 +26,23 @@ const MobileMenu = () => {
 
   const mobileMenu = css({
     position: "fixed",
+    top: '70px',
     width: "100vw",
     height: "100vh",
     backgroundColor: theme.colors.secondary,
   });
 
   const menuOpen = css({
-    right: 0,
-    transition: "right 0.3s ease-in-out",
+    display: 'block',
+    backgroundColor: theme.colors.secondary,
+    opacity: '0.95',
+    transition: "opacity 1s ease-in-out",
   });
 
   const menuClosed = css({
-    right: "-100vw",
-    transition: "right 0.3s ease-in-out",
+    display: 'none',
+    opacity: '0',
+    transition: "opacity 1s ease-in-out",
   });
 
   const menuPosition = showMenu ? menuOpen : menuClosed;
@@ -61,7 +65,7 @@ const MobileMenu = () => {
   return (
     <div>
       <div className={logoWrapper}>
-        <BusinessLogo inverted/>
+        <BusinessLogo/>
       </div>
       <button
         className={`${buttonWrapper}`}

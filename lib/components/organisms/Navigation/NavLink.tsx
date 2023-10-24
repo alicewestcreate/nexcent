@@ -1,3 +1,4 @@
+import { customTheme } from "@/app/theme";
 import { css } from "@emotion/css";
 import Link from "next/link";
 import React from "react";
@@ -13,6 +14,11 @@ const NavLink: React.FC<Props> = ({ slug, children }) => {
         // textDecoration: 'none',
         // color: 'inherit',
         // cursor: "pointer",
+        '&:hover' : {
+          color: customTheme.colors.primary,
+          borderBottom: `2px solid ${customTheme.colors.primary}`
+    
+        }
     })
 
 

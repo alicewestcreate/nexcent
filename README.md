@@ -4,10 +4,6 @@ https://www.figma.com/file/qDfvdpQkp1i6XfkxVrJegB/Responsive-Landing-Page-Design
 
 Todo: 
 
-- Import font awesome 
-- Update social media links 
-- Responive footer design for mobile 
-- Padding for each section/ mobile vs desktop 
 - H1 size font alternative for mobile 
 
 - Clean up all styling variables and interfaces. Make sure its consistant. 

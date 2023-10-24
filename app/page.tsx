@@ -125,11 +125,11 @@ export default function Home() {
       copy: "Revamping the Membership Model with Triathlon Australia",
       link: "Readmore ",
     },
-  ]
+  ];
 
   const gridContainer = css({
     display: "grid",
-    marginTop: '70px',
+    marginTop: "70px",
     gridTemplateColumns: "25px minmax(10vw, 1fr) 25px",
 
     [mq.tablet]: {
@@ -137,7 +137,7 @@ export default function Home() {
     },
     [mq.desktop]: {
       gridTemplateColumns: "1fr minmax(10vw, 900px) 1fr",
-      marginTop: '110px',
+      marginTop: "110px",
     },
     [mq.large]: {
       gridTemplateColumns: "1fr minmax(10vw, 1200px) 1fr",
@@ -145,12 +145,8 @@ export default function Home() {
   });
 
   const gridStyle = css({
-    paddingTop: "20px",
-    paddingBottom: "20px",
-    "& > :first-child": {
-      paddingTop: "40px",
-      paddingBottom: "40px",
-    },
+    paddingTop: "40px",
+    paddingBottom: "40px",
   });
 
   const GridRow = ({
@@ -183,6 +179,9 @@ export default function Home() {
 
         <GridRow>
           <HeadingCard content={headingCardsContent[0]}></HeadingCard>
+        </GridRow>
+
+        <GridRow>
           <LogoArray></LogoArray>
         </GridRow>
 
@@ -199,7 +198,9 @@ export default function Home() {
         </GridRow>
 
         <GridRow background={silverBackgound}>
-          <AchievementsSection content={metricTileContent}></AchievementsSection>
+          <AchievementsSection
+            content={metricTileContent}
+          ></AchievementsSection>
         </GridRow>
 
         <GridRow>
@@ -214,9 +215,11 @@ export default function Home() {
           <HeadingCard content={headingCardsContent[2]}></HeadingCard>
         </GridRow>
         <GridRow>
-          <ImageFeatureCardWrap content={imageFeatureCardContent}></ImageFeatureCardWrap>
+          <ImageFeatureCardWrap
+            content={imageFeatureCardContent}
+          ></ImageFeatureCardWrap>
         </GridRow>
-        <GridRow  background={silverBackgound}>
+        <GridRow background={silverBackgound}>
           <Demo></Demo>
         </GridRow>
         <GridRow background={blackBackground}>
