@@ -3,7 +3,7 @@ import generateSpacingString from "@/lib/utils/utilityFunc/generateSpacingString
 import { css } from "@emotion/css";
 import React from "react";
 
-const InputField = () => {
+const EmailInputField = () => {
     
     const inputFieldStying = css({
         backgroundColor: "rgba(255, 255, 255, 0.3)",
@@ -25,10 +25,8 @@ const InputField = () => {
         flexGrow: '1',
         '&::placeholder': {
             color: theme.colors.neutrals.white,
-
         }
     })
-
 
   return (
     <form>
@@ -41,4 +39,4 @@ const InputField = () => {
   );
 };
 
-export default InputField;
+export default EmailInputField;

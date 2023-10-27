@@ -11,19 +11,16 @@ interface Props {
 const NavLink: React.FC<Props> = ({ slug, children }) => {
 
     const style = css({
-        // textDecoration: 'none',
-        // color: 'inherit',
-        // cursor: "pointer",
+      color: "inherit",
         '&:hover' : {
           color: customTheme.colors.primary,
           borderBottom: `2px solid ${customTheme.colors.primary}`
-    
         }
     })
 
 
   return (
-    <li><Link className={style} href={slug}>{children}</Link></li>
+    <li><Link className={style} href={slug} data-testid="navigation-link">{children} </Link></li>
   );
 };
 
