@@ -11,7 +11,6 @@ interface MetricTileWrapperProps {
   }[];
 }
 const MetricTileWrapper = ({ metricTileList }: MetricTileWrapperProps) => {
-  console.log(metricTileList);
 
   const metricTileWrapperStyle = css({
     display: "grid",

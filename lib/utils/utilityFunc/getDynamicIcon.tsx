@@ -6,7 +6,11 @@ export const getDynamicIcon = (icon: string, color?: string) => {
     () =>
       import(`@/lib/components/atoms/Icons/${icon}`).then((module) => {
         const IconComponent = module.default;
-        return (props: IconProps) => <IconComponent {...props} color={color}></IconComponent>;
+        const DynamicIcon = (props: IconProps) => (
+        <IconComponent {...props} color={color}></IconComponent>
+        );
+        DynamicIcon.displayName = `DynamicIcon-${icon}`
+        return DynamicIcon
       }),
     { ssr: false,
       loading: () => <div>.</div> }

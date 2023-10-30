@@ -16,7 +16,6 @@ const AchievementsSection = ({content}:AchievementsProps ) => {
 
     const isDesktop = window.matchMedia(`(min-width: ${MQ.desktop}px)`).matches
     const alignment = isDesktop ? "left" : "center"
-    console.log(alignment);
 
 
     const gridStyling = css({

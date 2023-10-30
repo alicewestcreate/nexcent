@@ -19,8 +19,6 @@ const ImageFeatureCard = ({ image, copy, link }: ImageFeatureCardProps) => {
     alignItems: "center",
   });
 
-  console.log("image", image);
-
   const contentCard = css({
     display: "flex",
     flexDirection: "column",

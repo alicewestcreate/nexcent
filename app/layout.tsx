@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from './providers'
 import '@/pages/globals.css'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,7 @@ export default function RootLayout({
     <Providers>
     <html lang="en" className={`${inter.className}`}>
       <body >{children}</body>
-      <script src="https://kit.fontawesome.com/333a269518.js"></script>
+      <Script src="https://kit.fontawesome.com/333a269518.js"></Script>
     </html>
     </Providers>
   )
