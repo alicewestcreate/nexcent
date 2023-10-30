@@ -8,6 +8,7 @@ import { customTheme as theme } from "@/app/theme";
 const Navigation = () => {
   const navigationSwitch = css({
     position: "fixed",
+    zIndex: "100",
     width: "100vw",
     height: "80px",
     [mq.desktop]: {

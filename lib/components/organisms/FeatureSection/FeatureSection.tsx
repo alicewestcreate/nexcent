@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "@/lib/components/atoms/Image/Image";
+import Image from "next/image";
 import ButtonWrapper from "@/lib/components/atoms/Button/ButtonWrapper";
 import { css } from "@emotion/css";
 import Typography, { duoToneType } from "../../atoms/Typography/Typography";
@@ -57,15 +57,15 @@ const FeatureSection: React.FC<FeatureSection> = ({
 
   const imageStyle = css({
     gridArea: "image",
+    position: "relative",
     justifySelf: "center",
     alignSelf: "center",
-    "& img": {
-      width: "300px",
-    },
+    height: '100%',
+    width: "100%",
+    minHeight: "300px",
     [mq.mobile]: {
-      "& img": {
-        width: "400px",
-      },
+      minHeight: "400px",
+
     },
   });
   const contentStyle = css({
@@ -106,10 +106,10 @@ const FeatureSection: React.FC<FeatureSection> = ({
         </div>
       </div>
       <div className={imageStyle}>
-        <Image src={finalContent.image} ></Image>
+        <Image src={finalContent.image} fill={true} style={{objectFit: "contain"}} alt="illustration"></Image>
       </div>
     </section>
   );
-};
+}; 
 
 export default FeatureSection;

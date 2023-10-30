@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "../../atoms/Image/Image";
+import Image from "next/image";
 import { css } from "@emotion/css";
 
 interface LogoArrayProps {
@@ -30,7 +30,7 @@ const LogoArray = ({maxItemsToShow}:LogoArrayProps ) => {
 
 
   const Logos = images.slice(0,finalMaxItems).map((image, index) => {
-    return <div key={index}><Image key={index} src={`./${image}`}/></div>;
+    return <div key={index}><Image key={index} src={`/${image}`} alt={`${image} company logo`} width={48} height={48}/></div>;
   })
 
 

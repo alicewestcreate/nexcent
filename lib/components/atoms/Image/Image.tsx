@@ -1,17 +1,20 @@
-import { css } from '@emotion/css'
-import React from 'react'
+// import { css } from '@emotion/css'
+// import React from 'react'
+// import NextImage from 'next/image'
 
-interface ImageProps {
-    src: string,
-    width?: string,
-}
+// interface ImageProps {
+//     src: string,
+//     widthValue?: number,
+//     heightValue?: number,
+//     altValue : string,
+// }
 
-const Image: React.FC<ImageProps> = ({src, width}) => {
+// const Image: React.FC<ImageProps> = ({src, widthValue, heightValue, altValue}) => {
 
 
-  return (
-    <img src={`./${src}`} width={width || ''}></img>
-  )
-}
+//   return (
+//     <NextImage src={`/${src}`} alt={altValue} width={widthValue} height={heightValue}></NextImage>
+//   )
+// }
 
-export default Image
+// export default Image
